@@ -54,10 +54,10 @@ export default async function handler(
   <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #09090b; padding: 40px 20px;">
     <tr>
       <td align="center">
-        <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="background-color: #18181b; border-radius: 24px; border: 1px solid #27272a; overflow: hidden; max-width: 600px; width: 100%;">
+        <table width="100%" max-width="800" border="0" cellspacing="0" cellpadding="0" style="background-color: #18181b; border-radius: 24px; border: 1px solid #27272a; overflow: hidden; max-width: 800px; width: 100%;">
           <!-- Header -->
           <tr>
-            <td style="padding: 40px 30px; text-align: center; background: linear-gradient(135deg, #1e1b4b 0%, #3b0764 100%); background-color: #2e1065; border-bottom: 2px solid #c084fc;">
+            <td style="padding: 30px 16px; text-align: center; background: linear-gradient(135deg, #1e1b4b 0%, #3b0764 100%); background-color: #2e1065; border-bottom: 2px solid #c084fc;">
               <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.5px;">
                 🤫 Someone Spilled the Tea
               </h1>
@@ -69,26 +69,29 @@ export default async function handler(
 
           <!-- Content -->
           <tr>
-            <td style="padding: 40px 30px;">
+            <td style="padding: 30px 16px;">
               <!-- Meta Info (From/To) -->
-              <div style="margin-bottom: 30px;">
-                <!-- From -->
-                <div style="background-color: #27272a; border-radius: 12px; padding: 16px; border-left: 4px solid #c084fc; margin-bottom: 16px;">
-                  <span style="display: block; font-size: 11px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">👀 Who's this?</span>
-                  <p style="margin: 0; color: #ffffff; font-size: 16px; font-weight: 600; word-break: break-word;">${safeFrom}</p>
-                </div>
-                
-                <!-- To -->
-                <div style="background-color: #27272a; border-radius: 12px; padding: 16px; border-left: 4px solid #f472b6;">
-                  <span style="display: block; font-size: 11px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">🎯 Who's receiving?</span>
-                  <p style="margin: 0; color: #ffffff; font-size: 16px; font-weight: 600; word-break: break-word;">${safeTo}</p>
-                </div>
-              </div>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 24px;">
+                <tr>
+                  <td width="50%" style="padding-right: 8px; vertical-align: top;">
+                    <div style="background-color: #27272a; border-radius: 12px; padding: 16px; border-left: 4px solid #c084fc;">
+                      <span style="display: block; font-size: 11px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">👀 Who's this?</span>
+                      <p style="margin: 0; color: #ffffff; font-size: 16px; font-weight: 600; word-break: break-word;">${safeFrom}</p>
+                    </div>
+                  </td>
+                  <td width="50%" style="padding-left: 8px; vertical-align: top;">
+                    <div style="background-color: #27272a; border-radius: 12px; padding: 16px; border-left: 4px solid #f472b6;">
+                      <span style="display: block; font-size: 11px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">🎯 Who's receiving?</span>
+                      <p style="margin: 0; color: #ffffff; font-size: 16px; font-weight: 600; word-break: break-word;">${safeTo}</p>
+                    </div>
+                  </td>
+                </tr>
+              </table>
 
               <!-- The Message -->
               <div style="margin-bottom: 30px;">
                 <span style="display: block; font-size: 12px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; text-align: left;">💌 The Message</span>
-                <div style="background-color: #09090b; border: 1px solid #3f3f46; border-radius: 16px; padding: 24px; text-align: left; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
+                <div style="background-color: #09090b; border: 1px solid #3f3f46; border-radius: 16px; padding: 16px; text-align: left; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
                   <p style="margin: 0; color: #d4d4d8; font-size: 13px; line-height: 1.5; white-space: pre-wrap;">${safeMessage}</p>
                 </div>
               </div>
