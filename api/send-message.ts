@@ -50,62 +50,70 @@ export default async function handler(
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Anonymous Message</title>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f4f4f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <div style="max-width: 600px; margin: 40px auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-    <!-- Header -->
-    <div style="background-color: #4f46e5; padding: 32px 24px; text-align: center;">
-      <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 600;">
-        📨 New Anonymous Message
-      </h1>
-      <p style="color: #e0e7ff; margin: 8px 0 0 0; font-size: 15px;">
-        A new submission was received on your website
-      </p>
-    </div>
+<body style="margin: 0; padding: 0; background-color: #09090b; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #09090b; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="background-color: #18181b; border-radius: 24px; border: 1px solid #27272a; overflow: hidden; max-width: 600px; width: 100%;">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 40px 30px; text-align: center; background: linear-gradient(135deg, #1e1b4b 0%, #3b0764 100%); background-color: #2e1065; border-bottom: 2px solid #c084fc;">
+              <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.5px;">
+                🤫 Someone Spilled the Tea
+              </h1>
+              <p style="color: #e9d5ff; margin: 12px 0 0 0; font-size: 16px; font-weight: 500;">
+                A new anonymous message just arrived.
+              </p>
+            </td>
+          </tr>
 
-    <!-- Content -->
-    <div style="padding: 32px 24px;">
-      <!-- Sender Card -->
-      <div style="margin-bottom: 24px;">
-        <span style="display: block; font-size: 12px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Sender</span>
-        <div style="background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 16px;">
-          <p style="margin: 0; color: #111827; font-size: 16px;">${safeFrom}</p>
-        </div>
-      </div>
+          <!-- Content -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              <!-- Meta Info (From/To) -->
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 30px;">
+                <tr>
+                  <td width="50%" style="padding-right: 10px; vertical-align: top;">
+                    <div style="background-color: #27272a; border-radius: 12px; padding: 16px; border-left: 4px solid #c084fc;">
+                      <span style="display: block; font-size: 11px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">👀 Who's this?</span>
+                      <p style="margin: 0; color: #ffffff; font-size: 16px; font-weight: 600; word-break: break-word;">${safeFrom}</p>
+                    </div>
+                  </td>
+                  <td width="50%" style="padding-left: 10px; vertical-align: top;">
+                    <div style="background-color: #27272a; border-radius: 12px; padding: 16px; border-left: 4px solid #f472b6;">
+                      <span style="display: block; font-size: 11px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">🎯 Who's receiving?</span>
+                      <p style="margin: 0; color: #ffffff; font-size: 16px; font-weight: 600; word-break: break-word;">${safeTo}</p>
+                    </div>
+                  </td>
+                </tr>
+              </table>
 
-      <!-- Recipient Card -->
-      <div style="margin-bottom: 24px;">
-        <span style="display: block; font-size: 12px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Recipient</span>
-        <div style="background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 16px;">
-          <p style="margin: 0; color: #111827; font-size: 16px;">${safeTo}</p>
-        </div>
-      </div>
+              <!-- The Message -->
+              <div style="margin-bottom: 30px;">
+                <span style="display: block; font-size: 12px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; text-align: center;">💌 The Message</span>
+                <div style="background-color: #09090b; border: 1px solid #3f3f46; border-radius: 16px; padding: 30px; text-align: center; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
+                  <p style="margin: 0; color: #f4f4f5; font-size: 18px; line-height: 1.7; white-space: pre-wrap; font-style: italic;">"${safeMessage}"</p>
+                </div>
+              </div>
 
-      <!-- Message Card -->
-      <div style="margin-bottom: 24px;">
-        <span style="display: block; font-size: 12px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Message</span>
-        <div style="background-color: #eef2ff; border: 1px solid #c7d2fe; border-radius: 8px; padding: 20px;">
-          <p style="margin: 0; color: #1e1b4b; font-size: 16px; line-height: 1.6;">
-            ${safeMessage}
-          </p>
-        </div>
-      </div>
-
-      <!-- Timestamp -->
-      <div style="margin-bottom: 16px;">
-        <span style="display: block; font-size: 12px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Submission Time</span>
-        <p style="margin: 0; color: #4b5563; font-size: 14px;">
-          ${new Date().toLocaleString('en-US', { timeZone: 'UTC', timeZoneName: 'short' })}
-        </p>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div style="background-color: #f9fafb; border-top: 1px solid #e5e7eb; padding: 20px 24px; text-align: center;">
-      <p style="margin: 0; color: #6b7280; font-size: 13px;">
-        This email was automatically generated by your Anonymous Message Website.
-      </p>
-    </div>
-  </div>
+              <!-- Footer Note -->
+              <div style="text-align: center; padding-top: 20px; border-top: 1px dashed #3f3f46;">
+                <p style="margin: 0; color: #71717a; font-size: 13px; font-weight: 500;">
+                  Sent securely via InstaForm
+                </p>
+                <p style="margin: 6px 0 0 0; color: #52525b; font-size: 12px;">
+                  Uncensored &bull; Unfiltered &bull; Unapologetic
+                </p>
+                <p style="margin: 12px 0 0 0; color: #3f3f46; font-size: 11px;">
+                  ${new Date().toLocaleString('en-US', { timeZone: 'UTC', timeZoneName: 'short' })}
+                </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
     `;
