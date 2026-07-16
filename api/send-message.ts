@@ -87,9 +87,9 @@ export default async function handler(
 
               <!-- The Message -->
               <div style="margin-bottom: 30px;">
-                <span style="display: block; font-size: 12px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; text-align: center;">💌 The Message</span>
-                <div style="background-color: #09090b; border: 1px solid #3f3f46; border-radius: 16px; padding: 30px; text-align: center; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
-                  <p style="margin: 0; color: #f4f4f5; font-size: 18px; line-height: 1.7; white-space: pre-wrap; font-style: italic;">"${safeMessage}"</p>
+                <span style="display: block; font-size: 12px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; text-align: left;">💌 The Message</span>
+                <div style="background-color: #09090b; border: 1px solid #3f3f46; border-radius: 16px; padding: 24px; text-align: left; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
+                  <p style="margin: 0; color: #d4d4d8; font-size: 13px; line-height: 1.5; white-space: pre-wrap;">${safeMessage}</p>
                 </div>
               </div>
 
